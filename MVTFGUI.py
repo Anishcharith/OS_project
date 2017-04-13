@@ -79,7 +79,7 @@ def firstfit(processno,m,ch):
 				if i[1]>= m:
 					flag=1
 					occupied0.append([i[0],m])
-					process0.append(i[0])
+					process0.append(processno)
 					occupied0.sort()
 					hole0.remove(i)
 					processindex0.append([i[0],processno])
@@ -111,7 +111,7 @@ def firstfit(processno,m,ch):
 		if occupied0!= [] :
 			p=processno
 			for j in xrange(np.shape(processindex0)[0]):
-				if processindex0[j][0]==p:
+				if processindex0[j][1]==p:
 					print "process", processindex0[j][1], "removed"
 					rem=processindex0[j][1]
 					break
@@ -166,7 +166,7 @@ def bestfit(processno,m,ch):
 			
 			if flag:
 				occupied1.append([pos[0],m])
-				process1.append(pos[0])
+				process1.append(processno)
 				occupied1.sort()
 				hole1.remove(pos)
 				processindex1.append([pos[0],processno])
@@ -196,7 +196,7 @@ def bestfit(processno,m,ch):
 		if occupied1!= [] :
 			p=processno
 			for j in xrange(np.shape(processindex1)[0]):
-				if processindex1[j][0]==p:
+				if processindex1[j][1]==p:
 					print "process", processindex1[j][1], "removed"
 					rem=processindex1[j][1]
 					break
@@ -255,7 +255,7 @@ def worstfit(processno,m,ch):
 			
 			if flag:
 				occupied2.append([pos[0],m])
-				process2.append(pos[0])
+				process2.append(processno)
 				occupied2.sort()
 				hole2.remove(pos)
 				processindex2.append([pos[0],processno])
@@ -285,7 +285,7 @@ def worstfit(processno,m,ch):
 		if occupied2!= [] :
 			p=processno
 			for j in xrange(np.shape(processindex2)[0]):
-				if processindex2[j][0]==p:
+				if processindex2[j][1]==p:
 					print "process", processindex2[j][1], "removed"
 					rem=processindex2[j][1]
 					break
