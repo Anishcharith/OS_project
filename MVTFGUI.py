@@ -98,6 +98,8 @@ def firstfit(processno,m,ch):
 							except:
 								box0[j][1].place(height=(float(occupied0[k][1])/100)*500,width=100)
 								
+							log[0]=Label(frame1,bg="black",width=300,height=50,text="Process "+str(processno)+" added",fg="white")
+							log[0].place(x=5,y=650,height=50,width=290)
 					if i[1] !=m:
 						hole0.append([i[0]+m,i[1]-m])
 						hole0.sort()
@@ -118,7 +120,8 @@ def firstfit(processno,m,ch):
 					box0[k][1].config(bg='red',text='',relief=FLAT)
 					box0.pop(k)
 					break
-			
+			log[0]=Label(frame1,bg="black",width=300,height=50,text="Process "+str(processno)+" removed",fg="white")
+			log[0].place(x=5,y=650,height=50,width=290)
 			for i in occupied0:
 				if i[0]==p:
 					break
@@ -181,7 +184,8 @@ def bestfit(processno,m,ch):
 							box1[j][1].place(y=(float(occupied1[k][0])/100)*500,height=(float(occupied1[k][1])/100)*500,width=100)
 						except:
 							box1[j][1].place(height=(float(occupied1[k][1])/100)*500,width=100)
-								
+						log[1]=Label(frame1,bg="black",width=300,height=50,text="Process "+str(processno)+" added",fg="white")
+						log[1].place(x=305,y=650,height=50,width=290)
 				if i[1] !=m:
 					hole1.append([i[0]+m,i[1]-m])
 					hole1.sort()
@@ -201,7 +205,8 @@ def bestfit(processno,m,ch):
 					box1[k][1].config(bg='red',text='',relief=FLAT)
 					box1.pop(k)
 					break
-			
+			log[1]=Label(frame1,bg="black",width=300,height=50,text="Process "+str(processno)+" removed",fg="white")
+			log[1].place(x=305,y=650,height=50,width=290)
 			for i in occupied1:
 				if i[0]==p:
 					break
@@ -268,7 +273,8 @@ def worstfit(processno,m,ch):
 							box2[j][1].place(y=(float(occupied2[k][0])/100)*500,height=(float(occupied2[k][1])/100)*500,width=100)
 						except:
 							box2[j][1].place(height=(float(occupied2[k][1])/100)*500,width=100)
-								
+				log[2]=Label(frame1,bg="black",width=300,height=50,text="Process "+str(processno)+" added",fg="white")
+				log[2].place(x=605,y=650,height=50,width=290)
 				if i[1] !=m:
 					hole2.append([i[0]+m,i[1]-m])
 					hole2.sort()
@@ -288,7 +294,8 @@ def worstfit(processno,m,ch):
 					box2[k][1].config(bg='red',text='',relief=FLAT)
 					box2.pop(k)
 					break
-			
+			log[2]=Label(frame1,bg="black",width=300,height=50,text="Process "+str(processno)+" removed",fg="white")
+			log[2].place(x=605,y=650,height=50,width=290)
 			for i in occupied2:
 				if i[0]==p:
 					break
